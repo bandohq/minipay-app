@@ -11,6 +11,8 @@ import {
     stringToHex,
 } from "viem";
 import { celoAlfajores } from "viem/chains";
+import { BigNumberish } from "ethers";
+import BN from "bn.js";
 
 const publicClient = createPublicClient({
     chain: celoAlfajores,
@@ -22,6 +24,7 @@ const MINIPAY_NFT_CONTRACT = "0xE8F4699baba6C86DA9729b1B0a1DA1Bd4136eFeF"; // Te
 
 export const useWeb3 = () => {
     const [address, setAddress] = useState<string | null>(null);
+    const [balance, setBalance] = useState<any | null>(null);
 
     const getUserAddress = async () => {
         if (typeof window !== "undefined" && window.ethereum) {
@@ -130,6 +133,25 @@ export const useWeb3 = () => {
         return res;
     };
 
+    const getBalance = async () => {
+        let walletClient = createWalletClient({
+            transport: custom(window.ethereum),
+            chain: celoAlfajores,
+        });
+
+        let [address] = await walletClient.getAddresses();
+
+        const stableTokenContract = getContract({
+            abi: StableTokenABI.abi,
+            address: cUSDTokenAddress,
+            client: publicClient,
+        });
+
+        const balance = await stableTokenContract.read.balanceOf([address]);
+        setBalance(balance);
+        return balance;
+    }
+
     return {
         address,
         getUserAddress,
@@ -137,5 +159,7 @@ export const useWeb3 = () => {
         mintMinipayNFT,
         getNFTs,
         signTransaction,
+        getBalance,
+        balance
     };
 };
