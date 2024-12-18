@@ -4,7 +4,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useWeb3 } from "@/contexts/useWeb3";
-import { get } from "http";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
