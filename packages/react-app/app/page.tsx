@@ -12,6 +12,13 @@ export default function UnderConstruction() {
         height={400}
       />
       <div className="relative bg-white/70 backdrop-blur-md rounded-xl p-8 text-center shadow-lg">
+        <Image
+          src="/bando_full_green.png"
+          alt="Bando.cool logo"
+          width={200}
+          height={200}
+          className="mx-auto mb-4"
+        />
         <h1 className="text-4xl font-bold mb-4 text-[#333]">
           Site Under Construction
         </h1>
