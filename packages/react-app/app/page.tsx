@@ -1,7 +1,17 @@
 "use client";
 import Image from "next/image";
+import { BandoWidget, WidgetConfig } from "@bandohq/widget";
 
 export default function UnderConstruction() {
+  const widgetConfig: WidgetConfig = {
+    integrator: "bando-minipay",
+    theme: {
+      container: {
+        border: "1px solid rgb(234, 234, 234)",
+        borderRadius: "16px",
+      },
+    },
+  }
   return (
     <div className="flex justify-center items-center min-h-screen bg-colors-primaryComp text-white relative overflow-hidden">
       <Image
@@ -19,9 +29,8 @@ export default function UnderConstruction() {
           height={200}
           className="mx-auto mb-4"
         />
-        <h1 className="text-4xl font-bold mb-4 text-[#333]">
-          Site Under Construction
-        </h1>
+        
+        <BandoWidget integrator="bando-minipay" config={widgetConfig} />
         <p className="text-lg mb-6 text-[#333]">
           We are working on something exciting at Bando.cool
         </p>
