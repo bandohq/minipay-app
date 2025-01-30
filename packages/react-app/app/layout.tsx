@@ -17,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <AppProvider> */}
-        <div className={`${kanit.variable} font-sans`}>{children}</div>
-        {/* </AppProvider> */}
+        <AppProvider>
+          {children}
+        </AppProvider>
       </body>
     </html>
   );

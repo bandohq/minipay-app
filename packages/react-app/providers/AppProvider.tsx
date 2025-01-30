@@ -39,7 +39,7 @@ const queryClient = new QueryClient();
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   return (
-    <WagmiProvider config={config}>
+    <WagmiProvider config={config} reconnectOnMount>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
           <Layout>{children}</Layout>
