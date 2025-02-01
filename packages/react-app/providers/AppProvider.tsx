@@ -1,28 +1,29 @@
-'use client';
+"use client";
 
-import '@rainbow-me/rainbowkit/styles.css';
+import "@rainbow-me/rainbowkit/styles.css";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   RainbowKitProvider,
   connectorsForWallets,
-} from '@rainbow-me/rainbowkit';
-import { WagmiProvider, createConfig, http } from 'wagmi';
-import { celo, celoAlfajores } from 'wagmi/chains';
+} from "@rainbow-me/rainbowkit";
+import { WagmiProvider, createConfig, http } from "wagmi";
+import { celo, celoAlfajores } from "wagmi/chains";
 
-import Layout from '../components/Layout';
-import { injectedWallet } from '@rainbow-me/rainbowkit/wallets';
+import Layout from "../components/Layout";
+import { injectedWallet } from "@rainbow-me/rainbowkit/wallets";
+import { AutoConnectWallet } from "@/components/AutoConnect";
 
 const connectors = connectorsForWallets(
   [
     {
-      groupName: 'Recommended',
+      groupName: "Recommended",
       wallets: [injectedWallet],
     },
   ],
   {
-    appName: 'Celo Composer',
-    projectId: process.env.WC_PROJECT_ID ?? '044601f65212332475a09bc14ceb3c34',
+    appName: "Celo Composer",
+    projectId: process.env.WC_PROJECT_ID ?? "044601f65212332475a09bc14ceb3c34",
   }
 );
 
@@ -42,6 +43,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     <WagmiProvider config={config} reconnectOnMount>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
+          <AutoConnectWallet />
           <Layout>{children}</Layout>
         </RainbowKitProvider>
       </QueryClientProvider>
