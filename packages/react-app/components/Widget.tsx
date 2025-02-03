@@ -19,6 +19,7 @@ export function Widget() {
       container: {
         border: '1px solid transparent',
         borderRadius: '16px',
+        maxWidth: '100%',
       },
       typography: {
         fontFamily: 'Be Vietnam Pro, sans-serif',
