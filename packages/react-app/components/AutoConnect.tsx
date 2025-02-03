@@ -16,12 +16,12 @@ export function AutoConnectWallet() {
       if (injected) {
         connect({ connector: injected });
       } else if (typeof window !== "undefined" && window.celo) {
-        try {
+        /*try {
           await window.celo.enable();
           console.log("MiniPay conectado");
         } catch (error) {
           console.error("Error al conectar MiniPay:", error);
-        }
+        }*/
       }
     }
 

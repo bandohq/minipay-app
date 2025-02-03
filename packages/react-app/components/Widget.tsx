@@ -11,15 +11,23 @@ export function Widget() {
   const config = {
     appearance: 'light',
     theme: {
+      palette: {
+        primary: {
+          main: '#00955f',
+        },
+      },
       container: {
-        border: '1px solid rgb(234, 234, 234)',
+        border: '1px solid transparent',
         borderRadius: '16px',
       },
+      typography: {
+        fontFamily: 'Be Vietnam Pro, sans-serif',
+        fontSize: 16,
+      }
     },
     walletConfig: {
       onConnect: ()=>{openConnectModal?.();}
     },
-    hiddenUI: ["walletMenu"],
   } as Partial<WidgetConfig>
 
   return (
