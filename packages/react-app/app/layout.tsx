@@ -1,12 +1,18 @@
 import "@/styles/globals.css";
 
 import { AppProvider } from "@/providers/AppProvider";
-import { Kanit } from "next/font/google";
+import { Kanit, Be_Vietnam_Pro } from "next/font/google";
 
 const kanit = Kanit({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-kanit",
+});
+
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-be-vietnam-pro",
 });
 
 export default function RootLayout({
@@ -17,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <AppProvider> */}
-        <div className={`${kanit.variable} font-sans`}>{children}</div>
-        {/* </AppProvider> */}
+        <AppProvider>
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
