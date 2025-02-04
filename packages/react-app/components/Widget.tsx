@@ -1,39 +1,40 @@
-'use client'
+"use client";
 
-import type { WidgetConfig } from '@bandohq/widget'
-import { BandoWidget } from '@bandohq/widget'
-import { ClientOnly } from './ClientOnly'
-import { useConnectModal } from '@rainbow-me/rainbowkit';
-
+import type { WidgetConfig } from "@bandohq/widget";
+import { BandoWidget } from "@bandohq/widget";
+import { ClientOnly } from "./ClientOnly";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 
 export function Widget() {
   const { openConnectModal } = useConnectModal();
   const config = {
-    appearance: 'light',
+    appearance: "light",
     theme: {
       palette: {
         primary: {
-          main: '#00955f',
+          main: "#00955f",
         },
       },
       container: {
-        border: '1px solid transparent',
-        borderRadius: '16px',
-        maxWidth: '100%',
+        border: "1px solid transparent",
+        maxWidth: "100%",
+        maxHeight: "100%",
       },
       typography: {
-        fontFamily: 'Be Vietnam Pro, sans-serif',
+        fontFamily: "Be Vietnam Pro, sans-serif",
         fontSize: 16,
-      }
+      },
     },
     walletConfig: {
-      onConnect: ()=>{openConnectModal?.();}
+      onConnect: () => {
+        openConnectModal?.();
+      },
     },
-  } as Partial<WidgetConfig>
+  } as Partial<WidgetConfig>;
 
   return (
     <ClientOnly fallback={<div>fallback</div>}>
       <BandoWidget config={config} integrator="bando-minipay-app" />
     </ClientOnly>
-  )
+  );
 }
