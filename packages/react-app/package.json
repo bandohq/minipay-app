@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@bandohq/widget": "^0.1.11",
+    "@bandohq/widget": "^0.1.12",
     "@bigmi/react": "^0.1.0",
     "@fontsource/be-vietnam-pro": "^5.1.1",
     "@headlessui/react": "^2.1.10",
