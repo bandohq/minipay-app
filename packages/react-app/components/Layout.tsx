@@ -13,7 +13,8 @@ const Layout: FC<Props> = ({ children }) => {
 
   const handleInsufficientBalance = () =>
     setTimeout(() => setDrawerOpen(true), 0);
-  const handleNoTokensAvailable = useCallback(() => setDrawerOpen(true), []);
+  const handleNoTokensAvailable = () =>
+    setTimeout(() => setDrawerOpen(true), 0);
 
   useEffect(() => {
     if (!widgetEvents) return;
