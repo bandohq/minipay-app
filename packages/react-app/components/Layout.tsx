@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import Header from "./Header";
 import { Drawer, Button } from "@mui/material";
 import { useWidgetEvents, WidgetEvent } from "@bandohq/widget";
