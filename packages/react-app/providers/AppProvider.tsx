@@ -13,6 +13,7 @@ import { celo, celoAlfajores } from "wagmi/chains";
 import Layout from "../components/Layout";
 import { injectedWallet } from "@rainbow-me/rainbowkit/wallets";
 import { AutoConnectWallet } from "@/components/AutoConnect";
+import { IntercomProvider } from "./IntercomProvider";
 
 const connectors = connectorsForWallets(
   [
@@ -43,8 +44,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     <WagmiProvider config={config} reconnectOnMount>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider>
-          <AutoConnectWallet />
-          <Layout>{children}</Layout>
+          <IntercomProvider>
+            <AutoConnectWallet />
+            <Layout>{children}</Layout>
+          </IntercomProvider>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
