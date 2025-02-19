@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { Widget } from '@/components/Widget';
-export default function UnderConstruction() {
+export default function MiniAppPage() {
   return (
-    <main>   
+    <main>
       <Widget />
     </main>
   );
