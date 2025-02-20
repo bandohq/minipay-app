@@ -4,6 +4,7 @@ import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import { Typography, Button, styled } from "@mui/material";
 import "react-multi-carousel/lib/styles.css";
+import { useRouter } from 'next/navigation'
 
 const CarouselDiv = styled("div")({
   "& .carousel-container": {
@@ -65,6 +66,12 @@ const responsiveCarousel = {
 };
 
 export default function MiniAppPage() {
+  const router = useRouter();
+
+  const goToWidget = (params: string) => {
+    router.push(`/widget?${params}`);
+  }
+
   return (
     <main>
       <div className="flex flex-shrink-0 items-center">
@@ -186,7 +193,7 @@ export default function MiniAppPage() {
         </Carousel>
       </CarouselDiv>
       <div style={{ margin: '20px' }}>
-        <LandingButton>
+        <LandingButton onClick={() => goToWidget('')}>
           Explore All Products
         </LandingButton>
       </div>
