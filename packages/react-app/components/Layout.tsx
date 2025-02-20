@@ -7,6 +7,13 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const CarouselDiv = styled("div")({
+  "& .carousel-container": {
+    margin: "0 0 0 20px",
+  },
+  "& .carousel-item": {
+    height: "220px",
+    padding: "0 5px",
+  },
   "& .custom-dot-list-style": {
     position: "relative",
   },
@@ -25,19 +32,21 @@ const CarouselDiv = styled("div")({
 const responsiveCarousel = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1,
-    slidesToSlide: 3 // optional, default to 1.
+    items: 2,
+    slidesToSlide: 1, // optional, default to 1.
+    partialVisibilityGutter: 140
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1,
-    slidesToSlide: 1 // optional, default to 1.
+    items: 2,
+    slidesToSlide: 1, // optional, default to 1.
+    partialVisibilityGutter: 140
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
     slidesToSlide: 1, // optional, default to 1.
-    partialVisibilityGutter: 120
+    partialVisibilityGutter: 140
   }
 };
 
@@ -105,10 +114,10 @@ const Layout: FC<Props> = ({ children }) => {
             containerClass="carousel-container"
             removeArrowOnDeviceType={["tablet", "mobile"]}
             dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
+            itemClass="carousel-item"
           >
             <img
-              style={{ height: "auto", padding: "0 20px" }}
+              style={{ height: "220px" }}
               className="block h-8 sm:block w-auto lg:block"
               src="/example_deal_1.svg"
               width="100"
@@ -116,7 +125,7 @@ const Layout: FC<Props> = ({ children }) => {
               alt="Mini App Banner"
             />
             <img
-              style={{ height: "auto", padding: "0 20px" }}
+              style={{ height: "220px" }}
               className="block h-8 sm:block w-auto lg:block"
               src="/example_deal_2.svg"
               width="100"
