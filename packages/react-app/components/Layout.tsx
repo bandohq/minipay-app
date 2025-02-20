@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import Header from "./Header";
 import { Drawer, Button } from "@mui/material";
 import { useWidgetEvents, WidgetEvent } from "@bandohq/widget";
-
+import Footer from "./Footer";
 interface Props {
   children: ReactNode;
 }
@@ -38,6 +38,7 @@ const Layout: FC<Props> = ({ children }) => {
         <div className="max-w-7xl mx-auto" style={{ width: "100%" }}>
           {children}
         </div>
+        <Footer />
       </div>
       <Drawer
         anchor="bottom"
