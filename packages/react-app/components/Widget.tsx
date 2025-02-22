@@ -21,7 +21,7 @@ export function Widget() {
         maxHeight: "100%",
       },
       typography: {
-        fontFamily: "Be Vietnam Pro, sans-serif",
+        fontFamily: "Kanit, sans-serif",
         fontSize: 16,
       },
     },
@@ -30,6 +30,8 @@ export function Widget() {
         openConnectModal?.();
       },
     },
+    buildUrl: true,
+    hiddenUI: ["poweredBy"]
   } as Partial<WidgetConfig>;
 
   return (
