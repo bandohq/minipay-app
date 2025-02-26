@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import { Typography, Button, styled } from "@mui/material";
 import "react-multi-carousel/lib/styles.css";
