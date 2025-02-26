@@ -31,6 +31,9 @@ export default function Header() {
                     width="100"
                     height="20"
                     alt="Bando Logo"
+                    onClick={() => {
+                      window.location.href = "/";
+                    }}
                   />
                 </div>
               </div>
@@ -52,12 +55,32 @@ export default function Header() {
             <div className="space-y-1 pt-2 pb-4">
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
               >
                 Home
               </Disclosure.Button>
-              {/* Add here your custom menu elements */}
+              <Disclosure.Button
+                as="a"
+                href="https://bando.cool/"
+                className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+              >
+                About
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/widget"
+                className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+              >
+                Explore our products
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="mailto:soporte@bando.cool"
+                className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+              >
+                Contact
+              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>
