@@ -10,11 +10,6 @@ export function Widget() {
   const config = {
     appearance: "light",
     theme: {
-      palette: {
-        primary: {
-          main: "#00955f",
-        },
-      },
       container: {
         border: "1px solid transparent",
         maxWidth: "100%",
@@ -36,7 +31,7 @@ export function Widget() {
 
   return (
     <ClientOnly fallback={<div>fallback</div>}>
-      <BandoWidget config={config} integrator="bando-minipay-app" />
+      <BandoWidget config={config} integrator="opera-minipay-app" />
     </ClientOnly>
   );
 }

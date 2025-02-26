@@ -48,7 +48,7 @@ const Layout: FC<Props> = ({ children }) => {
           "& .MuiDrawer-paper": {
             borderRadius: "1rem 1rem 0 0",
             minHeight: "45%",
-            fontFamily: "Be Vietnam Pro, sans-serif",
+            fontFamily: "Kanit, sans-serif",
           },
         }}
       >

@@ -8,13 +8,13 @@ import { useRouter } from 'next/navigation'
 
 const CarouselDiv = styled("div")({
   "& .carousel-container": {
-    margin: "0 0 0 20px",
+    margin: "0",
   },
   "& .carousel-item": {
-    height: "220px",
-    padding: "0 5px",
+    padding: "0 6px",
   },
   "& .custom-dot-list-style": {
+    marginTop: "8px",
     position: "relative",
   },
   "& .custom-dot-list-style .react-multi-carousel-dot button": {
@@ -39,6 +39,7 @@ const LandingButton = styled(Button)({
   },
   textTransform: "capitalize",
   fontSize: "16px",
+  fontFamily: "var(--font-kanit)",
   padding: "10px 20px",
   display: "block",
   width: "100%",
@@ -49,19 +50,19 @@ const responsiveCarousel = {
     breakpoint: { max: 3000, min: 1024 },
     items: 2,
     slidesToSlide: 1, // optional, default to 1.
-    partialVisibilityGutter: 140
+    partialVisibilityGutter: 30
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
     slidesToSlide: 1, // optional, default to 1.
-    partialVisibilityGutter: 140
+    partialVisibilityGutter: 30
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
     slidesToSlide: 1, // optional, default to 1.
-    partialVisibilityGutter: 140
+    partialVisibilityGutter: 10
   }
 };
 
@@ -74,8 +75,11 @@ export default function MiniAppPage() {
 
   return (
     <main>
-      <div className="flex flex-shrink-0 items-center">
-          <Image
+      <div
+        className="flex flex-shrink-0 items-center"
+        onClick={() => goToWidget('')}
+      >
+          <img
             style={{ width: "100%", height: "auto", padding: "0 20px" }}
             className="block h-8 sm:block w-auto lg:block"
             src="/mini_app_banner.svg"
@@ -85,7 +89,7 @@ export default function MiniAppPage() {
           />
       </div>
       <div>
-        <Typography variant="h6" sx={{ p: '0 20px', m: '20px 0'}}>🔥 Most Popular</Typography>
+        <Typography variant="h6" sx={{ p: '0 20px', m: '20px 0', fontFamily: 'var(--font-kanit)' }}>🔥 Most Popular</Typography>
       </div>
       <CarouselDiv>
         <Carousel
@@ -96,44 +100,44 @@ export default function MiniAppPage() {
           responsive={responsiveCarousel}
           ssr={false} // means to render carousel on server-side.
           infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={5000}
+          autoPlay={false}
           renderDotsOutside
           keyBoardControl={true}
-          customTransition="all 600ms linear"
-          transitionDuration={700}
-          partialVisible={true}
+          customTransition="all 500ms linear"
+          transitionDuration={500}
+          centerMode
+          //partialVisible={true}
           containerClass="carousel-container"
           removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item"
         >
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{  width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_deal_1.svg"
             width="100"
             height="20"
             alt="Mini App Banner"
           />
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{  width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_deal_2.svg"
             width="100"
             height="20"
             alt="Mini App Banner"
           />
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{ width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_deal_3.svg"
             width="100"
             height="20"
             alt="Mini App Banner"
           />
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{ width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_deal_4.svg"
             width="100"
@@ -143,7 +147,7 @@ export default function MiniAppPage() {
         </Carousel>
       </CarouselDiv>
       <div>
-        <Typography variant="h6" sx={{ p: '0 20px', m: '20px 0'}}>Bando Promos</Typography>
+        <Typography variant="h6" sx={{ p: '0 20px', m: '20px 0', fontFamily: 'var(--font-kanit)' }}>Bando Promos</Typography>
       </div>
       <CarouselDiv>
         <Carousel
@@ -154,39 +158,39 @@ export default function MiniAppPage() {
           responsive={responsiveCarousel}
           ssr={false} // means to render carousel on server-side.
           infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={5000}
+          autoPlay={false}
+          centerMode
           renderDotsOutside
           keyBoardControl={true}
-          customTransition="all 600ms linear"
-          transitionDuration={700}
-          partialVisible={true}
+          customTransition="all 500ms linear"
+          transitionDuration={500}
+          //partialVisible={true}
           containerClass="carousel-container"
           removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item"
         >
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{ width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_promo_1.svg"
-            width="100"
+            width="180"
             height="20"
             alt="Mini App Banner"
           />
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{ width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_deal_2.svg"
-            width="100"
+            width="180"
             height="20"
             alt="Mini App Banner"
           />
-          <Image
-            style={{ height: "220px" }}
+          <img
+            style={{ width: '100%', height: '100%' }}
             className="block h-8 sm:block w-auto lg:block"
             src="/example_deal_3.svg"
-            width="100"
+            width="180"
             height="20"
             alt="Mini App Banner"
           />
@@ -194,7 +198,7 @@ export default function MiniAppPage() {
       </CarouselDiv>
       <div style={{ margin: '20px' }}>
         <LandingButton onClick={() => goToWidget('')}>
-          Explore All Products
+          Explore Our Products
         </LandingButton>
       </div>
     </main>

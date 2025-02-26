@@ -42,7 +42,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gypsum mt-auto border-t">
+    <footer className="bg-gypsum mt-auto">
       <div className="mx-auto max-w-7xl py-6 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex flex-wrap gap-4 justify-evenly">
           {footerLinks.map((item) => (
@@ -64,8 +64,11 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-2 md:order-1 md:mt-0">
-          <p className="text-center text-base text-black" style={{ fontSize: '12px', fontFamily: 'Kanit, sans-serif' }}>
-            &copy; {new Date().getFullYear()} Powered with ❤️ by <Image style={{ display: 'inline-block' }} src="/bando.svg" alt="Bando Logo" width={50} height={10} />
+          <p
+            className="text-left text-base text-black"
+            style={{ fontSize: '12px', fontFamily: 'Kanit, sans-serif', display: 'flex', alignItems: 'center' }}
+          >
+            &copy; {new Date().getFullYear()} Powered by <Image style={{ display: 'inline-flex', marginLeft: '4px' }} src="/bando.svg" alt="Bando Logo" width={50} height={10} />
           </p>
         </div>
       </div>
