@@ -23,7 +23,7 @@ const connectors = connectorsForWallets(
     },
   ],
   {
-    appName: "Celo Composer",
+    appName: "Bando MiniPay",
     projectId: process.env.WC_PROJECT_ID ?? "044601f65212332475a09bc14ceb3c34",
   }
 );

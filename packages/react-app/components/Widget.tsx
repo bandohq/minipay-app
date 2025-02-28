@@ -10,18 +10,14 @@ export function Widget() {
   const config = {
     appearance: "light",
     theme: {
-      palette: {
-        primary: {
-          main: "#00955f",
-        },
-      },
+      mode: "light",
       container: {
         border: "1px solid transparent",
         maxWidth: "100%",
-        maxHeight: "100%",
+        maxHeight: "100vh",
       },
       typography: {
-        fontFamily: "Be Vietnam Pro, sans-serif",
+        fontFamily: "Kanit, sans-serif",
         fontSize: 16,
       },
     },
@@ -30,11 +26,13 @@ export function Widget() {
         openConnectModal?.();
       },
     },
+    buildUrl: true,
+    hiddenUI: ["poweredBy", "header"],
   } as Partial<WidgetConfig>;
 
   return (
     <ClientOnly fallback={<div>fallback</div>}>
-      <BandoWidget config={config} integrator="bando-minipay-app" />
+      <BandoWidget config={config} integrator="opera-minipay-app" />
     </ClientOnly>
   );
 }
