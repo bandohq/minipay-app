@@ -18,7 +18,9 @@ Sentry.init({
       XMLHttpRequest: true,
       eventTarget: true,
     }),
-    Sentry.captureConsoleIntegration(["error", "log"]),
+    Sentry.captureConsoleIntegration({
+      levels: ["error", "log"],
+    }),
   ],
 
   // Define how likely Replay events are sampled.
