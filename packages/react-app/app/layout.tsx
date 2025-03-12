@@ -1,3 +1,4 @@
+"use client";
 import "@/styles/globals.css";
 
 import { AppProvider } from "@/providers/AppProvider";
@@ -23,9 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${kanit.variable} font-sans`}>
-        <AppProvider>
-          {children}
-        </AppProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
