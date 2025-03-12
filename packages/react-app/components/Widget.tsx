@@ -27,7 +27,7 @@ export function Widget() {
       },
     },
     buildUrl: true,
-    hiddenUI: ["poweredBy", "header"],
+    hiddenUI: ["poweredBy"],
   } as Partial<WidgetConfig>;
 
   return (
