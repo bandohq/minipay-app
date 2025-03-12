@@ -10,6 +10,15 @@ Sentry.init({
   // Add optional integrations for additional features
   integrations: [
     Sentry.replayIntegration(),
+    Sentry.browserTracingIntegration(),
+    Sentry.browserApiErrorsIntegration({
+      setTimeout: true,
+      setInterval: true,
+      requestAnimationFrame: true,
+      XMLHttpRequest: true,
+      eventTarget: true,
+    }),
+    Sentry.captureConsoleIntegration(["error", "log"]),
   ],
 
   // Define how likely Replay events are sampled.
