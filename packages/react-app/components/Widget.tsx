@@ -8,9 +8,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 export function Widget() {
   const { openConnectModal } = useConnectModal();
   const config = {
-    appearance: "light",
     theme: {
-      mode: "light",
       container: {
         border: "1px solid transparent",
         maxWidth: "100%",
