@@ -24,11 +24,11 @@ const navigation = [
 const footerLinks = [
   {
     name: "Privacy Policy",
-    href: "https://app.bando.cool/privacy-notice",
+    href: "https://ramp.bando.cool/privacy-notice",
   },
   {
     name: "Terms of Service",
-    href: "https://app.bando.cool/terms-of-service",
+    href: "https://ramp.bando.cool/terms-of-service",
   },  
 ];
 
@@ -48,15 +48,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-
-        <div className="mt-2 md:order-1 md:mt-0 flex justify-between">
-          <p
-            className="text-left text-base text-black"
-            style={{ fontSize: '12px', fontFamily: 'Kanit, sans-serif', display: 'flex', alignItems: 'center' }}
-          >
-            &copy; {new Date().getFullYear()} Powered by <Image style={{ display: 'inline-flex', marginLeft: '4px' }} src="/bando.svg" alt="Bando Logo" width={50} height={10} />
-          </p>
-          <div className="flex md:order-2 md:space-x-6 justify-between">
+        <div className="flex md:order-2 md:space-x-6">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -70,6 +62,13 @@ export default function Footer() {
               </a>
             ))}
         </div>
+        <div className="mt-2 md:order-1 md:mt-0 flex">
+          <p
+            className="text-left text-base text-black"
+            style={{ fontSize: '12px', fontFamily: 'Kanit, sans-serif', display: 'flex', alignItems: 'center' }}
+          >
+            &copy; {new Date().getFullYear()} Powered by <Image style={{ display: 'inline-flex', marginLeft: '4px' }} src="/bando.svg" alt="Bando Logo" width={50} height={10} />
+          </p>
         </div>
       </div>
     </footer>
